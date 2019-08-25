@@ -111,6 +111,20 @@ def big_shoe_rebounds
     result
 end
 
+def most_points_scored
+  i = 0
+  result = 0
+  game_hash.each do |team, info|
+  	 info[:players].each do |stats|
+  		 points = stats[:points]
+  		 if points > i
+  			 i = points
+  			 result = stats[:name]
+  	    end
+      end
+    end
+    result
+end
 def good_practices
   game_hash.each do |location, team_data|
     #are you ABSOLUTELY SURE what 'location' and 'team data' are? use binding.pry to find out!
