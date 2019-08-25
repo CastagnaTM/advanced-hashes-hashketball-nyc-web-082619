@@ -125,6 +125,19 @@ def most_points_scored
     end
     result
 end
+
+def winning_team
+  home = 0
+  away = 0
+  game_hash[:home][:players].each do |player|
+    home += player[:points]
+  end
+  game_hash[:away][:players].each do |player|
+    away += player[:points]
+  end
+  home > away? [:home][:team_name] : [:away][:team_name]
+end
+
 def good_practices
   game_hash.each do |location, team_data|
     #are you ABSOLUTELY SURE what 'location' and 'team data' are? use binding.pry to find out!
