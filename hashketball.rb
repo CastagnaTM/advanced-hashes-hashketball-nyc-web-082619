@@ -135,7 +135,8 @@ def winning_team
   game_hash[:away][:players].each do |player|
     away += player[:points]
   end
-  home > away? [:home][:team_name] : [:away][:team_name]
+  result = home > away? [:home][:team_name] : [:away][:team_name]
+  result
 end
 
 def good_practices
